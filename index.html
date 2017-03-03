@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Html Boilerplate</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <div class="header-bar">
+      <div class="header-bar-in">
+        <h2 class="title">Html Boilerplate</h2>
+      </div>
+    </div>
+    <div class="option-switch-list">
+        <h2 class="text-center">Pick your choice</h2>
+        <div class="option-switch-item">
+          <input class="option-switch-toggle-all" id="toggle-all" type="checkbox" value="toggle-all">
+          <label class="option-switch-label" for="toggle-all"><strong>Toggle All</strong></label> 
+        </div>
+        <div class="option-switch-item">
+          <label class="option-switch-label" for="responsive-meta">Responsive meta</label> <input class="option-switch" data-template-code="responsive-meta-code" id="responsive-meta" type="checkbox" value="responsive-meta">
+        </div>
+        <div class="option-switch-item">
+          <label class="option-switch-label" for="jquery">jQuery</label> <input class="option-switch" data-template-code="jquery-code" id="jquery" type="checkbox" value="jquery">
+        </div>
+      </div>
+    <div class="main-container cf">
+      
+      <div class="boilerplate-code">
+      <div class="boilerplate-code-in">
+          <pre>
+            <code class="language-html">
+              &lt;html&gt;
+                &lt;head&gt;
+                </code>
+                  <div class="template-code" id="responsive-meta-code">
+                  <code class="language-html">    
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                  </code>
+                  </div>
+                  <code class="language-html">
+                  &lt;title&gt;Page title&lt;/title&gt;
+                  <div class="template-code" id="jquery-code">&lt;script src="path/to/jquery"&gt; &lt;/script&gt;</div>
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;h1&gt;Main Heading&lt;/h1&gt;
+                &lt;/body&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          
+      </div>
+</div>
+    </div>
+    <script src="js/prism.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
