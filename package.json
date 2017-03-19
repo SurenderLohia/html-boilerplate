@@ -1,0 +1,33 @@
+{
+  "name": "html-boilerplate",
+  "version": "1.0.0",
+  "description": "Simple html boilerplate code",
+  "main": "js/app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SurenderLohia/html-boilerplate.git"
+  },
+  "keywords": [
+    "html",
+    "html-boilerplate",
+    "simple-html",
+    "html-skeleton"
+  ],
+  "author": "Surender Lohia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SurenderLohia/html-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SurenderLohia/html-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "dot": "^1.1.1",
+    "prismjs": "^1.6.0"
+  }
+}
