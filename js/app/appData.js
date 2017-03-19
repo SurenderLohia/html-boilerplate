@@ -6,6 +6,11 @@ var appData = {
       isChecked: true
     },
     {
+      id: "meta-info",
+      name: "Basic Meta Info",
+      isChecked: false
+    },
+    {
       id: "jquery",
       name: "jQuery",
       isChecked: false
@@ -19,11 +24,11 @@ var appData = {
     }
   },
 
-  libaries: {
+  libraries: {
     js: {
       jquery: {
         name: "jquery",
-        cdnPath: "cdn path"
+        cdnPath: "https://code.jquery.com/jquery-3.2.0.min.js"
       }
     },
 

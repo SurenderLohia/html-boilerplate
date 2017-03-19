@@ -9,6 +9,7 @@ var _ = require('./helper');
 // Templates
 var metaTmpl = require('html-loader!./templates/meta.html');
 var jqueryTmpl = require('html-loader!./templates/jquery.html');
+var metaInfoTmpl = require('html-loader!./templates/meta-info.html');
 
 var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.html');
 
@@ -49,17 +50,16 @@ var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.h
     var templates = {
       js: doT.template(jqueryTmpl),
       meta: doT.template(metaTmpl),
+      metaInfo: doT.template(metaInfoTmpl),
       optionSwitchList: doT.template(optionSwitchListTmpl)
     };
     
     _.renderTemplate('js-option-switch-list', templates.optionSwitchList, {switchItems: appData.switchItems});
 
-    _.renderTemplate('jquery-template', templates.js, {path: 'path/to/jquery'});
+    _.renderTemplate('jquery-template', templates.js, {path: appData.libraries.js.jquery.cdnPath});
     _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);
-
+    _.renderTemplate('meta-info-template', templates.metaInfo);
   }
-
-  console.log('webpack watching');
 
   // Code init
   init();
