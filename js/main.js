@@ -39,5 +39,5 @@
 
   // Code init
   init();
-}(window))
+}(window));
 
