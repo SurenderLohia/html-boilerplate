@@ -32,13 +32,13 @@
       
       <div class="boilerplate-code">
       <div class="boilerplate-code-in">
-        
+        <div id="header-section"></div>
           
 
 <pre><code class="language-html"><script type="text/plain"><!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"></script></code><br><div id="responsive-meta"><code class="language-html"><script type="text/plain">    <meta name="viewport" content="width=device-width, initial-scale=1"></script></code></div><title>My Awesome website</title></script></code><div class="template-code" id="jquery"><code class="language-html"><script type="text/plain">    <script src="path/to/jquery"></script></script></code></div><code class="language-html"><script type="text/plain">  </head>
+   <meta charset="utf-8"></script></code><br><div id="responsive-meta"></div><title>My Awesome website</title></script></code><div class="template-code" id="jquery"></div><code class="language-html"><script type="text/plain">  </head>
   <body>
     <h1>Hello, world!</h1>
   </body>
@@ -46,6 +46,19 @@
       </div>
 </div>
     </div>
+    
+    
+    <!-- Templates -->
+    <script id="meta-tmpl" type="text/x-dot-template">
+      <code class="language-html"><script type="text/plain">  <meta name="{{= it.name }}" content="{{= it.content }}"></script></code>
+    </script>
+
+    <script id="js-tmpl" type="text/x-dot-template">
+      <code class="language-html"><script type="text/plain">  <script src="{{= it.path }}"></script></script></code>
+    </script>
+
+    <!-- js -->
+    <script src="js/doT.min.js"></script>
     <script src="js/prism.js"></script>
     <script src="js/main.js"></script>
   </body>
