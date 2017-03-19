@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/SurenderLohia/html-boilerplate#readme",
   "devDependencies": {
+    "html-loader": "^0.4.5",
     "webpack": "^2.2.1"
   },
   "dependencies": {

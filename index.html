@@ -17,15 +17,7 @@
     </div>
     <div class="option-switch-list">
         <h2 class="text-center title">Custome HTML</h2>
-        <div class="option-switch-item">
-          <input class="option-switch-toggle-all" id="toggle-all" type="checkbox" value="toggle-all">
-          <label class="option-switch-label" for="toggle-all"><strong>Toggle All</strong></label> 
-        </div>
-        <div class="option-switch-item">
-          <label class="option-switch-label" for="responsive-meta-switch">Responsive meta</label> <input class="option-switch" data-template-code="responsive-meta" id="responsive-meta-switch" type="checkbox" checked value="responsive-meta">
-        </div>
-        <div class="option-switch-item">
-          <label class="option-switch-label" for="jquery-switch">jQuery</label> <input class="option-switch" data-template-code="jquery" id="jquery-switch" type="checkbox" value="jquery">
+        <div id="js-option-switch-list">
         </div>
       </div>
     <div class="main-container cf">
@@ -38,7 +30,7 @@
 <pre><code class="language-html"><script type="text/plain"><!DOCTYPE html>
 <html lang="en">
   <head>
-   <meta charset="utf-8"></script></code><br><div id="responsive-meta"></div><title>My Awesome website</title></script></code><div class="template-code" id="jquery"></div><code class="language-html"><script type="text/plain">  </head>
+   <meta charset="utf-8"></script></code><br><div id="responsive-meta-template"></div><title>My Awesome website</title></script></code><div class="template-code" id="jquery-template"></div><code class="language-html"><script type="text/plain">  </head>
   <body>
     <h1>Hello, world!</h1>
   </body>
@@ -47,16 +39,6 @@
 </div>
     </div>
     
-    
-    <!-- Templates -->
-    <script id="meta-tmpl" type="text/x-dot-template">
-      <code class="language-html"><script type="text/plain">  <meta name="{{= it.name }}" content="{{= it.content }}"></script></code>
-    </script>
-
-    <script id="js-tmpl" type="text/x-dot-template">
-      <code class="language-html"><script type="text/plain">  <script src="{{= it.path }}"></script></script></code>
-    </script>
-
     <!-- js -->
     <script src="dist/js/bundle.js"></script>
   </body>

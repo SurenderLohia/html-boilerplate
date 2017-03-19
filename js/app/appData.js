@@ -1,4 +1,17 @@
 var appData = {
+  switchItems: [
+    {
+      id: "responsive-meta",
+      name: "Responsive Meta",
+      isChecked: true
+    },
+    {
+      id: "jquery",
+      name: "jQuery",
+      isChecked: false
+    }
+  ],
+
   meta: {
     viewport: {
       name: "viewport",

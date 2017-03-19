@@ -1,0 +1,5 @@
+{{~it.switchItems :switchItem:index}}
+  <div class="option-switch-item">
+    <label class="option-switch-label" for="{{= switchItem.id}}-switch">{{= switchItem.name }}</label> <input class="option-switch" data-template-code="{{= switchItem.id }}-template" id="{{= switchItem.id }}-switch" type="checkbox" {{? switchItem.isChecked }} checked {{?}} value="responsive-meta">
+  </div>
+{{~}}

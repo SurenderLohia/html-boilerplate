@@ -1,5 +1,9 @@
 var helper = {};
 
+function getElById(id) {
+  return document.getElementById(id);
+}
+
 function forEach(arr, action) {
   var arrLen = arr.length;
   var item;
@@ -10,13 +14,14 @@ function forEach(arr, action) {
 
 // dotT.js render Helper
 function renderTemplate(templatePlaceholderId, templateFn, data) {
-  var templatePlaceHolder = document.getElementById(templatePlaceholderId);
+  var templatePlaceHolder = getElById(templatePlaceholderId);
   templatePlaceHolder.innerHTML=templateFn(data);
 }
 
 helper = {
   forEach: forEach,
-  renderTemplate: renderTemplate
+  renderTemplate: renderTemplate,
+  getElById: getElById
 }
 
 module.exports = helper;

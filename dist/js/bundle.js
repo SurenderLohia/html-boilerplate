@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,6 +71,19 @@
 /***/ (function(module, exports) {
 
 var appData = {
+  switchItems: [
+    {
+      id: "responsive-meta",
+      name: "Responsive Meta",
+      isChecked: true
+    },
+    {
+      id: "jquery",
+      name: "jQuery",
+      isChecked: false
+    }
+  ],
+
   meta: {
     viewport: {
       name: "viewport",
@@ -103,6 +116,10 @@ module.exports = appData;
 
 var helper = {};
 
+function getElById(id) {
+  return document.getElementById(id);
+}
+
 function forEach(arr, action) {
   var arrLen = arr.length;
   var item;
@@ -113,13 +130,14 @@ function forEach(arr, action) {
 
 // dotT.js render Helper
 function renderTemplate(templatePlaceholderId, templateFn, data) {
-  var templatePlaceHolder = document.getElementById(templatePlaceholderId);
+  var templatePlaceHolder = getElById(templatePlaceholderId);
   templatePlaceHolder.innerHTML=templateFn(data);
 }
 
 helper = {
   forEach: forEach,
-  renderTemplate: renderTemplate
+  renderTemplate: renderTemplate,
+  getElById: getElById
 }
 
 module.exports = helper;
@@ -276,6 +294,24 @@ var __WEBPACK_AMD_DEFINE_RESULT__;// doT.js
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = "<code class=\"language-html\"><script type=\"text/plain\">  <script src=\"{{= it.path }}\"></script></script></code>";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = "<code class=\"language-html\"><script type=\"text/plain\">  <meta name=\"{{= it.name }}\" content=\"{{= it.content }}\"></script></code>";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = "{{~it.switchItems :switchItem:index}}\n  <div class=\"option-switch-item\">\n    <label class=\"option-switch-label\" for=\"{{= switchItem.id}}-switch\">{{= switchItem.name }}</label> <input class=\"option-switch\" data-template-code=\"{{= switchItem.id }}-template\" id=\"{{= switchItem.id }}-switch\" type=\"checkbox\" {{? switchItem.isChecked }} checked {{?}} value=\"responsive-meta\">\n  </div>\n{{~}}";
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -1074,10 +1110,10 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1104,16 +1140,22 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Libs
 var doT = __webpack_require__(2);
-var prismjs = __webpack_require__(3);
+var prismjs = __webpack_require__(6);
 
 // App
 var appData = __webpack_require__(0);
 var _ = __webpack_require__(1);
+
+// Templates
+var metaTmpl = __webpack_require__(4);
+var jqueryTmpl = __webpack_require__(3);
+
+var optionSwitchListTmpl = __webpack_require__(5);
 
 (function(w) {
   function init() {
@@ -1150,12 +1192,16 @@ var _ = __webpack_require__(1);
 
   function dotInit() {
     var templates = {
-      js: doT.template(document.getElementById('js-tmpl').text),
-      meta: doT.template(document.getElementById('meta-tmpl').text),
+      js: doT.template(jqueryTmpl),
+      meta: doT.template(metaTmpl),
+      optionSwitchList: doT.template(optionSwitchListTmpl)
     };
+    
+    _.renderTemplate('js-option-switch-list', templates.optionSwitchList, {switchItems: appData.switchItems});
 
-    _.renderTemplate('jquery', templates.js, {path: 'path/to/jquery'});
-    _.renderTemplate('responsive-meta', templates.meta, appData.meta.viewport);
+    _.renderTemplate('jquery-template', templates.js, {path: 'path/to/jquery'});
+    _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);
+
   }
 
   console.log('webpack watching');

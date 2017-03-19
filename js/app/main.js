@@ -6,6 +6,12 @@ var prismjs = require('prismjs');
 var appData = require('./appData');
 var _ = require('./helper');
 
+// Templates
+var metaTmpl = require('html-loader!./templates/meta.html');
+var jqueryTmpl = require('html-loader!./templates/jquery.html');
+
+var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.html');
+
 (function(w) {
   function init() {
     dotInit();
@@ -41,12 +47,16 @@ var _ = require('./helper');
 
   function dotInit() {
     var templates = {
-      js: doT.template(document.getElementById('js-tmpl').text),
-      meta: doT.template(document.getElementById('meta-tmpl').text),
+      js: doT.template(jqueryTmpl),
+      meta: doT.template(metaTmpl),
+      optionSwitchList: doT.template(optionSwitchListTmpl)
     };
+    
+    _.renderTemplate('js-option-switch-list', templates.optionSwitchList, {switchItems: appData.switchItems});
 
-    _.renderTemplate('jquery', templates.js, {path: 'path/to/jquery'});
-    _.renderTemplate('responsive-meta', templates.meta, appData.meta.viewport);
+    _.renderTemplate('jquery-template', templates.js, {path: 'path/to/jquery'});
+    _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);
+
   }
 
   console.log('webpack watching');
