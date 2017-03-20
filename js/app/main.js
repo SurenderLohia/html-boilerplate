@@ -54,7 +54,9 @@ var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.h
       optionSwitchList: doT.template(optionSwitchListTmpl)
     };
     
-    _.renderTemplate('js-option-switch-list', templates.optionSwitchList, {switchItems: appData.switchItems});
+    _.renderTemplate('js-option-switch-meta-list', templates.optionSwitchList, {switchItems: appData.switchItems.metas});
+    _.renderTemplate('js-option-switch-css-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.cssLibraries});
+    _.renderTemplate('js-option-switch-javascript-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.jsLibraries});
 
     _.renderTemplate('jquery-template', templates.js, {path: appData.libraries.js.jquery.cdnPath});
     _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);

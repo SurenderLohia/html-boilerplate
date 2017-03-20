@@ -1,21 +1,37 @@
 var appData = {
-  switchItems: [
-    {
-      id: "responsive-meta",
-      name: "Responsive Meta",
-      isChecked: true
-    },
-    {
-      id: "meta-info",
-      name: "Basic Meta Info",
-      isChecked: false
-    },
-    {
-      id: "jquery",
-      name: "jQuery",
-      isChecked: false
-    }
-  ],
+  switchItems: {
+    metas: [
+      {
+        id: "responsive-meta",
+        name: "Responsive Meta",
+        isChecked: true
+      },
+      {
+        id: "meta-info",
+        name: "Basic Meta Info",
+        isChecked: false
+      },
+    ],
+    cssLibraries: [
+      {
+        id: "normalizer",
+        name: "Normalizer",
+        isChecked: false
+      },
+      {
+        id: "basscss",
+        name: "Basscss",
+        isChecked: false
+      }
+    ],
+    jsLibraries: [
+      {
+        id: "jquery",
+        name: "jQuery",
+        isChecked: false
+      }
+    ],
+  },
 
   meta: {
     viewport: {
@@ -31,13 +47,18 @@ var appData = {
         cdnPath: "https://code.jquery.com/jquery-3.2.0.min.js"
       }
     },
-
-    css: {
-      normalizer: {
+    css: [
+      {
+        id:"normalizer", 
         name: "normalizer",
         cdnPath: "cdn path"
+      },
+      {
+        id: "basscss",
+        name: "Basscss",
+        cdnPath: "cdn path"
       }
-    }
+    ]
   }
 }
 

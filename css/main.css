@@ -42,6 +42,30 @@ body {
   font-weight: normal;
 }
 
+.sub-title {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.sidebar-wrap {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar-title-bar {
+  background-color: #009688;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebar-title {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+
 .option-switch-list {
   background-color: rgba(0, 0, 0, 0.1);
 }
