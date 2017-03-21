@@ -61,9 +61,9 @@ var cssLibsTmpl = require('html-loader!./templates/codes/css-libs.html');
     // Sidebar
     _.renderTemplate('js-option-switch-meta-list', templates.optionSwitchList, {switchItems: appData.switchItems.metas});
     _.renderTemplate('js-option-switch-css-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.cssLibraries});
-    _.renderTemplate('js-option-switch-javascript-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.jsLibraries});
-    _.renderTemplate('js-ui-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.uiFrameworks});
-    _.renderTemplate('js-javascript-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.jsFrameworks});
+   _.renderTemplate('js-option-switch-javascript-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.jsLibraries});
+   // _.renderTemplate('js-ui-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.uiFrameworks});
+    //_.renderTemplate('js-javascript-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.jsFrameworks});
     
 
     // Main Code sections
