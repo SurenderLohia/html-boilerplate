@@ -14,7 +14,7 @@ var appData = {
     ],
     cssLibraries: [
       {
-        id: "normalizer",
+        id: "normalize",
         name: "Normalize.css",
         isChecked: false
       },

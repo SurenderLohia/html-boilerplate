@@ -86,7 +86,7 @@ var appData = {
     ],
     cssLibraries: [
       {
-        id: "normalizer",
+        id: "normalize",
         name: "Normalize.css",
         isChecked: false
       },
@@ -381,7 +381,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;// doT.js
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = "{{~it.cssLibs :cssLib:index}}\n<div id=\"{{= cssLib.id }}-template\">&nbsp;&nbsp;&nbsp;<code class=\"language-html\"><script type=\"text/plain\"><link rel=\"stylesheet\" href=\"{{= cssLib.cdnPath }}\"></script></code></div>{{~}}\n\n\n\n";
+module.exports = "{{~it.cssLibs :cssLib:index}}\n<div class=\"template-code\" id=\"{{= cssLib.id }}-template\">&nbsp;&nbsp;&nbsp;<code class=\"language-html\"><script type=\"text/plain\"><link rel=\"stylesheet\" href=\"{{= cssLib.cdnPath }}\"></script></code></div>{{~}}\n\n\n\n";
 
 /***/ }),
 /* 4 */
