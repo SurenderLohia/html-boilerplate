@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -87,12 +87,22 @@ var appData = {
     cssLibraries: [
       {
         id: "normalizer",
-        name: "Normalizer",
+        name: "Normalize.css",
         isChecked: false
       },
       {
         id: "basscss",
         name: "Basscss",
+        isChecked: false
+      },
+      {
+        id: "purecss",
+        name: "Pure.css",
+        isChecked: false
+      },
+      {
+        id: "bulma",
+        name: "Bulma",
         isChecked: false
       }
     ],
@@ -102,6 +112,45 @@ var appData = {
         name: "jQuery",
         isChecked: false
       }
+    ],
+    uiFrameworks: [
+      {
+        id: "bootstrap",
+        name: "bootstrap",
+        isChecked: false
+      },
+      {
+        id: "semantic-ui",
+        name: "Semantic UI",
+        isChecked: false
+      },
+    ],
+    jsFrameworks: [
+      {
+        id: "vue-js",
+        name: "Vue JS",
+        isChecked: false
+      },
+      {
+        id: "react",
+        name: "react",
+        isChecked: false
+      },
+      {
+        id: "angular",
+        name: "Angular",
+        isChecked: false
+      },
+      {
+        id: "ember",
+        name: "Ember",
+        isChecked: false
+      },
+      {
+        id: "backbone",
+        name: "Backbone.js",
+        isChecked: false
+      },
     ],
   },
 
@@ -121,14 +170,24 @@ var appData = {
     },
     css: [
       {
-        id:"normalizer", 
-        name: "normalizer",
-        cdnPath: "cdn path"
+        id:"normalize", 
+        name: "Normalize.css",
+        cdnPath: "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
       },
       {
         id: "basscss",
         name: "Basscss",
-        cdnPath: "cdn path"
+        cdnPath: "https://unpkg.com/basscss@8.0.2/css/basscss.min.css"
+      },
+      {
+        id: "purecss",
+        name: "Pure.css",
+        cdnPath: "https://unpkg.com/purecss@0.6.2/build/pure-min.css"
+      },
+      {
+        id: "bulma",
+        name: "Bulma",
+        cdnPath: "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css"
       }
     ]
   }
@@ -322,28 +381,40 @@ var __WEBPACK_AMD_DEFINE_RESULT__;// doT.js
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = "&nbsp;&nbsp;&nbsp;&nbsp;<code class=\"language-html\">&lt;script&gt; src=\"{{= it.path }}\">&lt;/script&gt;</script></code>";
+module.exports = "{{~it.cssLibs :cssLib:index}}\n<div id=\"{{= cssLib.id }}-template\">&nbsp;&nbsp;&nbsp;<code class=\"language-html\"><script type=\"text/plain\"><link rel=\"stylesheet\" href=\"{{= cssLib.cdnPath }}\"></script></code></div>{{~}}\n\n\n\n";
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"author\" content=\"name\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"description\" content=\"description here\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"keywords\" content=\"keywords,here\">\n</script>\n</code>\n</div>";
+module.exports = "&nbsp;&nbsp;&nbsp;&nbsp;<code class=\"language-html\">&lt;script&gt; src=\"{{= it.path }}\">&lt;/script&gt;</script></code>";
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "&nbsp;&nbsp;<code class=\"language-html\">\n<script type=\"text/plain\">\n  <meta name=\"{{= it.name }}\" content=\"{{= it.content }}\">\n</script>\n</code>";
+module.exports = "<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"author\" content=\"name\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"description\" content=\"description here\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n  <meta name=\"keywords\" content=\"keywords,here\">\n</script>\n</code>\n</div>";
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "{{~it.switchItems :switchItem:index}}\n  <div class=\"option-switch-item\">\n    <label class=\"option-switch-label\" for=\"{{= switchItem.id}}-switch\">{{= switchItem.name }}</label> <input class=\"option-switch\" data-template-code=\"{{= switchItem.id }}-template\" id=\"{{= switchItem.id }}-switch\" type=\"checkbox\" {{? switchItem.isChecked }} checked {{?}} value=\"responsive-meta\">\n  </div>\n{{~}}";
+module.exports = "&nbsp;&nbsp;<code class=\"language-html\">\n<script type=\"text/plain\">\n  <meta name=\"{{= it.name }}\" content=\"{{= it.content }}\">\n</script>\n</code>";
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports) {
+
+module.exports = "{{~it.switchItems :switchItem:index}}\n  <div class=\"option-switch-item\">\n    <label class=\"option-switch-label\" for=\"{{= switchItem.id}}-switch\">{{= switchItem.name }}</label> <input class=\"option-switch\" data-template-code=\"{{= switchItem.id }}-template\" id=\"{{= switchItem.id }}-switch\" type=\"checkbox\" {{? switchItem.isChecked }} checked {{?}} value=\"responsive-meta\">\n  </div>\n{{~}}";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "{{~it.selectBoxOptions :selectBoxOption:index}}\n  <option value={{= selectBoxOption.id }}-val>{{= selectBoxOption.name }}</option>\n{{~}}";
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -1142,10 +1213,10 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1172,23 +1243,25 @@ module.exports = g;
 
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Libs
 var doT = __webpack_require__(2);
-var prismjs = __webpack_require__(7);
+var prismjs = __webpack_require__(9);
 
 // App
 var appData = __webpack_require__(0);
 var _ = __webpack_require__(1);
 
 // Templates
-var metaTmpl = __webpack_require__(5);
-var jqueryTmpl = __webpack_require__(3);
-var metaInfoTmpl = __webpack_require__(4);
+var optionSwitchListTmpl = __webpack_require__(7);
+var selectBoxOptionsTmpl = __webpack_require__(8);
 
-var optionSwitchListTmpl = __webpack_require__(6);
+var metaTmpl = __webpack_require__(6);
+var jqueryTmpl = __webpack_require__(4);
+var metaInfoTmpl = __webpack_require__(5);
+var cssLibsTmpl = __webpack_require__(3);
 
 (function(w) {
   function init() {
@@ -1228,16 +1301,24 @@ var optionSwitchListTmpl = __webpack_require__(6);
       js: doT.template(jqueryTmpl),
       meta: doT.template(metaTmpl),
       metaInfo: doT.template(metaInfoTmpl),
-      optionSwitchList: doT.template(optionSwitchListTmpl)
+      optionSwitchList: doT.template(optionSwitchListTmpl),
+      selectBoxOptions: doT.template(selectBoxOptionsTmpl),
+      cssLibs: doT.template(cssLibsTmpl)
     };
     
+    // Sidebar
     _.renderTemplate('js-option-switch-meta-list', templates.optionSwitchList, {switchItems: appData.switchItems.metas});
     _.renderTemplate('js-option-switch-css-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.cssLibraries});
     _.renderTemplate('js-option-switch-javascript-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.jsLibraries});
+    _.renderTemplate('js-ui-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.uiFrameworks});
+    _.renderTemplate('js-javascript-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.jsFrameworks});
+    
 
+    // Main Code sections
     _.renderTemplate('jquery-template', templates.js, {path: appData.libraries.js.jquery.cdnPath});
     _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);
     _.renderTemplate('meta-info-template', templates.metaInfo);
+    _.renderTemplate('js-css-libs-template', templates.cssLibs, {cssLibs: appData.libraries.css});
   }
 
   // Code init

@@ -64,6 +64,12 @@ body {
   margin-top: 0;
 }
 
+.custom-selectbox {
+  padding: 10px 5px;
+  width: 100%;
+  background: transparent;
+}
+
 
 
 .option-switch-list {

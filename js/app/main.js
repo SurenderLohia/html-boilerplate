@@ -7,11 +7,13 @@ var appData = require('./appData');
 var _ = require('./helper');
 
 // Templates
-var metaTmpl = require('html-loader!./templates/meta.html');
-var jqueryTmpl = require('html-loader!./templates/jquery.html');
-var metaInfoTmpl = require('html-loader!./templates/meta-info.html');
-
 var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.html');
+var selectBoxOptionsTmpl = require('html-loader!./templates/selectbox-options.html');
+
+var metaTmpl = require('html-loader!./templates/codes/meta.html');
+var jqueryTmpl = require('html-loader!./templates/codes/jquery.html');
+var metaInfoTmpl = require('html-loader!./templates/codes/meta-info.html');
+var cssLibsTmpl = require('html-loader!./templates/codes/css-libs.html');
 
 (function(w) {
   function init() {
@@ -51,16 +53,24 @@ var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.h
       js: doT.template(jqueryTmpl),
       meta: doT.template(metaTmpl),
       metaInfo: doT.template(metaInfoTmpl),
-      optionSwitchList: doT.template(optionSwitchListTmpl)
+      optionSwitchList: doT.template(optionSwitchListTmpl),
+      selectBoxOptions: doT.template(selectBoxOptionsTmpl),
+      cssLibs: doT.template(cssLibsTmpl)
     };
     
+    // Sidebar
     _.renderTemplate('js-option-switch-meta-list', templates.optionSwitchList, {switchItems: appData.switchItems.metas});
     _.renderTemplate('js-option-switch-css-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.cssLibraries});
     _.renderTemplate('js-option-switch-javascript-libraries-list', templates.optionSwitchList, {switchItems: appData.switchItems.jsLibraries});
+    _.renderTemplate('js-ui-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.uiFrameworks});
+    _.renderTemplate('js-javascript-framework-options', templates.selectBoxOptions, {selectBoxOptions: appData.switchItems.jsFrameworks});
+    
 
+    // Main Code sections
     _.renderTemplate('jquery-template', templates.js, {path: appData.libraries.js.jquery.cdnPath});
     _.renderTemplate('responsive-meta-template', templates.meta, appData.meta.viewport);
     _.renderTemplate('meta-info-template', templates.metaInfo);
+    _.renderTemplate('js-css-libs-template', templates.cssLibs, {cssLibs: appData.libraries.css});
   }
 
   // Code init
