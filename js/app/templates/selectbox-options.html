@@ -1,3 +1,4 @@
+<option value"=-1" disabled selected>{{= it.label }}</option>
 {{~it.selectBoxOptions :selectBoxOption:index}}
-  <option value={{= selectBoxOption.id }}-val>{{= selectBoxOption.name }}</option>
+  <option value={{= selectBoxOption.id }} data-template-code="js-{{= selectBoxOption.id }}-template">{{= selectBoxOption.name }}</option>
 {{~}}

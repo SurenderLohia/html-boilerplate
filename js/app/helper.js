@@ -12,6 +12,10 @@ function forEach(arr, action) {
   }
 }
 
+function attachEvent(el, event, fun) {
+  el.addEventListener(event, fun);
+}
+
 // dotT.js render Helper
 function renderTemplate(templatePlaceholderId, templateFn, data) {
   var templatePlaceHolder = getElById(templatePlaceholderId);
@@ -21,7 +25,8 @@ function renderTemplate(templatePlaceholderId, templateFn, data) {
 helper = {
   forEach: forEach,
   renderTemplate: renderTemplate,
-  getElById: getElById
+  getElById: getElById,
+  attachEvent: attachEvent
 }
 
 module.exports = helper;

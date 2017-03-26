@@ -61,7 +61,7 @@ var appData = {
       },
       {
         id: "react",
-        name: "react",
+        name: "React",
         isChecked: false
       },
       {
@@ -118,6 +118,14 @@ var appData = {
         cdnPath: "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css"
       }
     ]
+  },
+
+  uiFrameworks: {
+    bootstrap: {
+      css: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+      jquery: "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
+      js: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    }
   }
 }
 
