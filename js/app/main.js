@@ -1,6 +1,8 @@
 // Libs
 var doT = require('dot/doT');
 var prismjs = require('prismjs');
+var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
+var prismLineNumbers =  require('prismjs/plugins/line-numbers/prism-line-numbers');
 
 // App
 var appData = require('./appData');
@@ -100,12 +102,12 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
     });
     _.renderTemplate('js-ui-framework-options', templates.selectBoxOptions, {
       selectBoxOptions: appData.switchItems.uiFrameworks,
-      label: 'UI Frameworks',
+      label: 'Select UI Framework',
       category: 'ui-framework'
     });
     _.renderTemplate('js-javascript-framework-options', templates.selectBoxOptions, {
       selectBoxOptions: appData.switchItems.jsFrameworks,
-      label: 'JS Frameworks',
+      label: 'Select JS Framework',
       category: 'js-framework'
     });
 
@@ -119,6 +121,7 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
       cssLibs: appData.libraries.css
     });
 
+    // bootstrap
     _.renderTemplate('js-bootstrap-css-template', templates.css, {
       path: appData.uiFrameworks.bootstrap.css
     });
@@ -127,6 +130,31 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
     });
     _.renderTemplate('js-bootstrap-js-template', templates.script, {
       path: appData.uiFrameworks.bootstrap.js
+    });
+
+    // semantic-ui
+    _.renderTemplate('js-semantic-ui-css-template', templates.css, {
+      path: appData.uiFrameworks.semanticUi.css
+    });
+    _.renderTemplate('js-semantic-ui-jquery-template', templates.script, {
+      path: appData.uiFrameworks.semanticUi.jquery
+    });
+    _.renderTemplate('js-semantic-ui-js-template', templates.script, {
+      path: appData.uiFrameworks.semanticUi.js
+    });
+
+    // Vue.js
+    _.renderTemplate('js-vue-js-template', templates.script, {
+      path: appData.jsFrameworks.vueJs.core
+    });
+
+    // React
+    _.renderTemplate('js-react-template', templates.script, {
+      path: appData.jsFrameworks.react.core
+    });
+
+    _.renderTemplate('js-react-dom-template', templates.script, {
+      path: appData.jsFrameworks.react.dom
     });
   }
 

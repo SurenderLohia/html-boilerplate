@@ -19,6 +19,10 @@ function attachEvent(el, event, fun) {
 // dotT.js render Helper
 function renderTemplate(templatePlaceholderId, templateFn, data) {
   var templatePlaceHolder = getElById(templatePlaceholderId);
+  if(!templatePlaceHolder) {
+    console.error('Placeholder template is not defined: ' + templatePlaceholderId + '\nUnable to render this template');
+    return;
+  }
   templatePlaceHolder.innerHTML=templateFn(data);
 }
 

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Html Boilerplate</title>
-    <link type="text/css" rel="stylesheet" href="css/main.css">
-    <link type="text/css" rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/prism-line-numbers.css">
   </head>
   <body>
     <div class="header-bar">
@@ -17,7 +18,7 @@
     </div>
     <div class="option-switch-list">
         
-        <h2 class="text-center title">Custome HTML</h2>
+        <h2 class="text-center title">Custom HTML</h2>
         
         <div class="sidebar-wrap sidebar-title-bar">
           <h4 class="sub-title sidebar-title">Common Meta</h4>
@@ -46,8 +47,12 @@
         <div class="sidebar-wrap sidebar-title-bar">
           <h4 class="sub-title sidebar-title">JavaScript Frameworks</h4>
         </div>
-        <select class="custom-selectbox" id="js-javascript-framework-options">
+        <select class="custom-selectbox js-sidebar-selectbox" data-selectbox-category="js-js-framework" id="js-javascript-framework-options">
         </select>
+        <div class="info sidebar-wrap">
+          <p>Note: If you planed to use JavaScript framework for your real project then prefer to use with a package manger like <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm</a> and build tool like <a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer">webpack</a> or <a href="http://browserify.org/" target="_blank" rel="noopener noreferrer">browserify</a>.</p>
+          <p>Are you looking for angular js try this <a href="https://jsfiddle.net/angulartypescript/n305zyya/" target="_blank" rel="noopener noreferrer">jsfiddle</a></p>
+        </div>
       </div>
       
     <div class="main-container cf">
@@ -62,11 +67,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></script></code><br><div id="js-responsive-meta-template"></div><div class="template-code" id="js-meta-info-template"></div><div id="js-css-libs-template"></div><div id="js-bootstrap-css-template" class="js-ui-framework js-bootstrap-template"></div></script></code><code class="language-html"><script type="text/plain">    <title>My Awesome website</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></script></code><br><div id="js-responsive-meta-template"></div><div class="template-code" id="js-meta-info-template"></div><div id="js-css-libs-template"></div>
+    <div id="js-bootstrap-css-template" class="js-ui-framework js-bootstrap-template template-code"></div>
+    <div id="js-semantic-ui-css-template" class="js-ui-framework js-semantic-ui-template template-code"></div>
+    </script></code><code class="language-html no-whitespace-normalization"><script type="text/plain">    <title>My Awesome website</title>
   </head>
   <body>
-    <h1>Hello, world!</h1></script></code><div class="template-code" id="js-jquery-template"></div><div class="template-code js-ui-framework js-bootstrap-template" id="js-bootstrap-jquery-template"></div><div class="template-code js-ui-framework js-bootstrap-template" id="js-bootstrap-js-template"></div><div><code class="language-html"><script type="text/plain">  </body>
-</html></script></code></div></pre>
+    <h1>Hello, world!</h1></script></code><div class="template-code" id="js-jquery-template"></div>
+    <div class="template-code js-ui-framework js-bootstrap-template" id="js-bootstrap-jquery-template"></div>
+    <div class="template-code js-ui-framework js-bootstrap-template" id="js-bootstrap-js-template"></div>
+
+    <div class="template-code js-ui-framework js-semantic-ui-template" id="js-semantic-ui-jquery-template"></div>
+    <div class="template-code js-ui-framework js-semantic-ui-template" id="js-semantic-ui-js-template"></div>
+
+    <div class="template-code js-js-framework js-vue-js-template" id="js-vue-js-template"></div>
+  
+    <div class="template-code js-js-framework js-react-template" id="js-react-template"></div>
+    <div class="template-code js-js-framework js-react-template" id="js-react-dom-template"></div>
+
+    <div><code class="language-html"><script type="text/plain">  </body>
+</html></script></code></div>
+</pre>
       </div>
 </div>
     </div>

@@ -24,11 +24,6 @@ body {
   width: 100%;
 }
 
-.header-bar-in {
-  background-color: #009688;
-  color: #fff;
-}
-
 .header-bar-in,
 .boilerplate-code {
   padding-left: 10px;
@@ -53,8 +48,6 @@ body {
 }
 
 .sidebar-title-bar {
-  background-color: #009688;
-  color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -70,10 +63,8 @@ body {
   background: transparent;
 }
 
-
-
 .option-switch-list {
-  background-color: rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #ccc;
 }
 
 .template-code {
