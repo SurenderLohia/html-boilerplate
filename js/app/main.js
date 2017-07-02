@@ -88,7 +88,7 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
       cssLibs: doT.template(cssLibsTmpl),
       css: doT.template(cssTmpl),
       vueJsHtml: doT.template(vueJsHtml),
-      //vueJsInit: doT.template(vueJsInit)
+      vueJsInit: doT.template(vueJsInit)
     };
 
     var data = {
@@ -156,7 +156,7 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
       path: appData.jsFrameworks.vueJs.core
     });
     _.renderTemplate('js-vue-js-html-template', templates.vueJsHtml);
-    //_.renderTemplate('js-vue-js-init-template', templates.vueJsInit);
+    _.renderTemplate('js-vue-js-init-template', templates.vueJsInit);
 
     // React
     _.renderTemplate('js-babel-template', templates.script, {

@@ -738,13 +738,13 @@ module.exports = "<code class=\"language-html no-whitespace-normalization\">    
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;div id=\"app\"&gt;<br>\n      &lt;p&gt;&#123;&#123;message &#125;&#125;&lt;/p&gt;<br>\n    &lt;/div&gt;\n</code>\n\n";
+module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;div id=\"app\"&gt;\n      &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;<br>\n    &lt;/div&gt;\n</code>\n\n";
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <script>\n      new Vue({\n        el: '#app',\n        data: {\n          message: 'Hello Vue.js!'\n        }\n      });\n    </script>\n</script>\n</code>\n\n";
+module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;script&gt;\n      new Vue({\n        el: '#app',\n        data: {\n          message: 'Hello Vue.js!'\n        }\n      });\n    &lt;/script&gt;\n</code>\n\n";
 
 /***/ }),
 /* 12 */
@@ -2600,7 +2600,7 @@ var vueJsInit = __webpack_require__(11);
       cssLibs: doT.template(cssLibsTmpl),
       css: doT.template(cssTmpl),
       vueJsHtml: doT.template(vueJsHtml),
-      //vueJsInit: doT.template(vueJsInit)
+      vueJsInit: doT.template(vueJsInit)
     };
 
     var data = {
@@ -2668,7 +2668,7 @@ var vueJsInit = __webpack_require__(11);
       path: appData.jsFrameworks.vueJs.core
     });
     _.renderTemplate('js-vue-js-html-template', templates.vueJsHtml);
-    //_.renderTemplate('js-vue-js-init-template', templates.vueJsInit);
+    _.renderTemplate('js-vue-js-init-template', templates.vueJsInit);
 
     // React
     _.renderTemplate('js-babel-template', templates.script, {
