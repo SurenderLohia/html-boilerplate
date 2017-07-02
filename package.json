@@ -28,6 +28,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "clipboard": "^1.7.1",
     "dot": "^1.1.1",
     "prismjs": "^1.6.0"
   }

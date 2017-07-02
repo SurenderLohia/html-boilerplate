@@ -160,6 +160,13 @@ a {
   }
 }
 
+/* Handle firefox outline while focus */
+select:focus,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  outline: 0;
+}
+
 /* Helper */
 .cf:before,
 .cf:after {

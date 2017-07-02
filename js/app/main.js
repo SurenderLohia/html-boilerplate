@@ -1,12 +1,15 @@
 // Libs
 var doT = require('dot/doT');
 var prismjs = require('prismjs');
+var prismToolbar =  require('prismjs/plugins/toolbar/prism-toolbar');
+var clipboard = require('clipboard');
 var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
 var prismLineNumbers =  require('prismjs/plugins/line-numbers/prism-line-numbers');
 
 // App
 var appData = require('./appData');
 var _ = require('./helper');
+var prismCopy = require('./prism-copy');
 
 // Templates
 var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.html');
@@ -22,6 +25,7 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
   function init() {
     dotInit();
     bindEvents();
+    prismCopy.init();
   }
 
   function onOptionSwitchChange(e) {
