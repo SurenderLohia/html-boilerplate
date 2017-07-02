@@ -4,7 +4,6 @@ var prismjs = require('prismjs');
 var prismToolbar =  require('prismjs/plugins/toolbar/prism-toolbar');
 var clipboard = require('clipboard');
 var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
-var prismLineNumbers =  require('prismjs/plugins/line-numbers/prism-line-numbers');
 
 // App
 var appData = require('./appData');
@@ -20,6 +19,9 @@ var scriptTmpl = require('html-loader!./templates/codes/script.html');
 var metaInfoTmpl = require('html-loader!./templates/codes/meta-info.html');
 var cssLibsTmpl = require('html-loader!./templates/codes/css-libs.html');
 var cssTmpl = require('html-loader!./templates/codes/css.html');
+
+var vueJsHtml = require('html-loader!./templates/codes/vue-js-html.html');
+var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
 
 (function (w) {
   function init() {
@@ -84,7 +86,9 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
       optionSwitchList: doT.template(optionSwitchListTmpl),
       selectBoxOptions: doT.template(selectBoxOptionsTmpl),
       cssLibs: doT.template(cssLibsTmpl),
-      css: doT.template(cssTmpl)
+      css: doT.template(cssTmpl),
+      vueJsHtml: doT.template(vueJsHtml),
+      //vueJsInit: doT.template(vueJsInit)
     };
 
     var data = {
@@ -151,12 +155,16 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
     _.renderTemplate('js-vue-js-template', templates.script, {
       path: appData.jsFrameworks.vueJs.core
     });
+    _.renderTemplate('js-vue-js-html-template', templates.vueJsHtml);
+    //_.renderTemplate('js-vue-js-init-template', templates.vueJsInit);
 
     // React
+    _.renderTemplate('js-babel-template', templates.script, {
+      path: appData.jsFrameworks.react.babel
+    });
     _.renderTemplate('js-react-template', templates.script, {
       path: appData.jsFrameworks.react.core
     });
-
     _.renderTemplate('js-react-dom-template', templates.script, {
       path: appData.jsFrameworks.react.dom
     });

@@ -109,7 +109,7 @@ var appData = {
     bootstrap: {
       css: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
       jquery: "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
-      js: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      js: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     },
     semanticUi: {
       css: "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css",
@@ -124,7 +124,8 @@ var appData = {
     },
     react: {
       core: "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js",
-      dom: "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"
+      dom: "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js",
+      babel: "https://unpkg.com/babel-standalone@6.25.0/babel.min.js"
     },
   }
 }
