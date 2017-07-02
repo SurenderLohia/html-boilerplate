@@ -34,6 +34,7 @@ body {
                sans-serif;
 
   background: #FF5722;
+  line-height: 1.4;
   color: #fff;
 }
 
@@ -47,6 +48,10 @@ a {
   padding-right: 10px;
 }
 
+.main-title-spacing {
+  padding-top: 20px;
+}
+
 .boilerplate-code {
   max-width: 960px;
 }
@@ -55,6 +60,7 @@ a {
   margin: 0;
   padding: 0;
   line-height: 50px;
+  font-size: 1.7rem;
   font-weight: normal;
 }
 
@@ -71,6 +77,7 @@ a {
 .sidebar-title-bar {
   padding-top: 10px;
   padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-title {
@@ -95,7 +102,7 @@ a {
 }
 
 .option-switch-list {
-  border-right: 1px solid #ccc;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .template-code {
@@ -121,6 +128,10 @@ a {
   position: absolute;
   right: 10px;
   top: 12px;
+}
+
+.info {
+  color: rbga(0, 0, 0, 0.8);
 }
 
 /* large screen */
@@ -166,4 +177,8 @@ a {
 
 .mb10 {
   margin-bottom: 10px;
+}
+
+.rounded {
+  border-radius: 5px;
 }
