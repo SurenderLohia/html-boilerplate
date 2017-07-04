@@ -15,6 +15,7 @@ var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.h
 var selectBoxOptionsTmpl = require('html-loader!./templates/selectbox-options.html');
 
 var metaTmpl = require('html-loader!./templates/codes/meta.html');
+var helloWorld = require('html-loader!./templates/codes/hello-world.html');
 var scriptTmpl = require('html-loader!./templates/codes/script.html');
 var metaInfoTmpl = require('html-loader!./templates/codes/meta-info.html');
 var cssLibsTmpl = require('html-loader!./templates/codes/css-libs.html');
@@ -88,7 +89,8 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
       cssLibs: doT.template(cssLibsTmpl),
       css: doT.template(cssTmpl),
       vueJsHtml: doT.template(vueJsHtml),
-      vueJsInit: doT.template(vueJsInit)
+      vueJsInit: doT.template(vueJsInit),
+      helloWorld: doT.template(helloWorld)
     };
 
     var data = {
@@ -128,6 +130,8 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
     _.renderTemplate('js-css-libs-template', templates.cssLibs, {
       cssLibs: appData.libraries.css
     });
+
+    _.renderTemplate('js-hello-world-template', templates.helloWorld);
 
     // bootstrap
     _.renderTemplate('js-bootstrap-css-template', templates.css, {

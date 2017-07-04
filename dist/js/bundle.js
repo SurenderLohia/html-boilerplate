@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 25);
+/******/ 	return __webpack_require__(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,7 +72,7 @@
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(17), __webpack_require__(23), __webpack_require__(21)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(18), __webpack_require__(24), __webpack_require__(22)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -720,46 +720,52 @@ module.exports = "<code class=\"language-html no-whitespace-normalization\"><scr
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">  \n   <meta name=\"author\" content=\"name\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n   <meta name=\"description\" content=\"description here\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n   <meta name=\"keywords\" content=\"keywords here\">\n</script>\n</code>\n</div>";
+module.exports = "<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <h1>Hello, world!</h1>\n</script>\n</code>\n\n";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <meta name=\"{{= it.name }}\" content=\"{{= it.content }}\">\n</script>\n</code>";
+module.exports = "<div>\n<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">  \n   <meta name=\"author\" content=\"name\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n   <meta name=\"description\" content=\"description here\">\n</script>\n</code>\n</div>\n<div>\n<code class=\"language-html\">\n<script type=\"text/plain\">  \n   <meta name=\"keywords\" content=\"keywords here\">\n</script>\n</code>\n</div>";
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;script src=\"{{= it.path }}\">&lt;/script&gt;</script></code>";
+module.exports = "<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <meta name=\"{{= it.name }}\" content=\"{{= it.content }}\">\n</script>\n</code>";
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;div id=\"app\"&gt;\n      &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;<br>\n    &lt;/div&gt;\n</code>\n\n";
+module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;script src=\"{{= it.path }}\">&lt;/script&gt;</script></code>";
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "<code class=\"language-html no-whitespace-normalization\">    &lt;script&gt;\n      new Vue({\n        el: '#app',\n        data: {\n          message: 'Hello Vue.js!'\n        }\n      });\n    &lt;/script&gt;\n</code>\n\n";
+module.exports = "<div>\n<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <div id=\"app\">\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-html\">\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;\n</code>\n</div>\n\n<div>\n<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    </div>\n</script>\n</code>\n</div>";
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = "{{~it.switchItems :switchItem:index}}\n  <div class=\"option-switch-item\">\n    <label class=\"option-switch-label\" for=\"{{= switchItem.id}}-switch\">{{= switchItem.name }}</label> <input class=\"option-switch\" data-template-code=\"js-{{= switchItem.id }}-template\" id=\"{{= switchItem.id }}-switch\" type=\"checkbox\" {{? switchItem.isChecked }} checked {{?}} value=\"responsive-meta\">\n  </div>\n{{~}}";
+module.exports = "<div>\n<code class=\"language-html no-whitespace-normalization\">\n<script type=\"text/plain\">    <script>\n  </script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n<script type=\"text/plain\">      new Vue({\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n&nbsp;&nbsp;\n<script type=\"text/plain\">      el: '#app',\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n&nbsp;&nbsp;\n<script type=\"text/plain\">      data: {\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n&nbsp;&nbsp;&nbsp;&nbsp;\n<script type=\"text/plain\">      message: 'Hello Vue.js!'\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n&nbsp;&nbsp;\n<script type=\"text/plain\">      }\n</script>\n</code>\n</div>\n\n<div>\n<code class=\"language-js no-whitespace-normalization\">\n<script type=\"text/plain\">      });\n</script>\n</code>\n</div>\n\n<code class=\"language-html no-whitespace-normalization\">    &lt;/script&gt;\n</code>\n</div>\n";
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = "<option value\"=-1\" selected>{{= it.label }}</option>\n{{~it.selectBoxOptions :selectBoxOption:index}}\n  <option value={{= selectBoxOption.id }} data-template-code=\"js-{{= selectBoxOption.id }}-template\">{{= selectBoxOption.name }}</option>\n{{~}}";
+module.exports = "{{~it.switchItems :switchItem:index}}\n  <div class=\"option-switch-item\">\n    <label class=\"option-switch-label\" for=\"{{= switchItem.id}}-switch\">{{= switchItem.name }}</label> <input class=\"option-switch\" data-template-code=\"js-{{= switchItem.id }}-template\" id=\"{{= switchItem.id }}-switch\" type=\"checkbox\" {{? switchItem.isChecked }} checked {{?}} value=\"responsive-meta\">\n  </div>\n{{~}}";
 
 /***/ }),
 /* 14 */
+/***/ (function(module, exports) {
+
+module.exports = "<option value\"=-1\" selected>{{= it.label }}</option>\n{{~it.selectBoxOptions :selectBoxOption:index}}\n  <option value={{= selectBoxOption.id }} data-template-code=\"js-{{= selectBoxOption.id }}-template\">{{= selectBoxOption.name }}</option>\n{{~}}";
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports) {
 
 (function() {
@@ -936,7 +942,7 @@ Prism.hooks.add('before-sanity-check', function (env) {
 }());
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 (function(){
@@ -1075,7 +1081,7 @@ Prism.hooks.add('before-sanity-check', function (env) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -1874,15 +1880,15 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(22)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -2114,7 +2120,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 var DOCUMENT_NODE_TYPE = 9;
@@ -2153,10 +2159,10 @@ module.exports = closest;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var closest = __webpack_require__(18);
+var closest = __webpack_require__(19);
 
 /**
  * Delegates event to a selector.
@@ -2203,7 +2209,7 @@ module.exports = delegate;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
 /**
@@ -2258,11 +2264,11 @@ exports.fn = function(value) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var is = __webpack_require__(20);
-var delegate = __webpack_require__(19);
+var is = __webpack_require__(21);
+var delegate = __webpack_require__(20);
 
 /**
  * Validates all params and calls the right
@@ -2359,7 +2365,7 @@ module.exports = listen;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 function select(element) {
@@ -2408,7 +2414,7 @@ module.exports = select;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 function E () {
@@ -2480,7 +2486,7 @@ module.exports = E;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 var g;
@@ -2507,15 +2513,15 @@ module.exports = g;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Libs
 var doT = __webpack_require__(4);
-var prismjs = __webpack_require__(16);
-var prismToolbar =  __webpack_require__(15);
+var prismjs = __webpack_require__(17);
+var prismToolbar =  __webpack_require__(16);
 var clipboard = __webpack_require__(0);
-var prismNormalizeWhitespace =  __webpack_require__(14);
+var prismNormalizeWhitespace =  __webpack_require__(15);
 
 // App
 var appData = __webpack_require__(1);
@@ -2523,17 +2529,18 @@ var _ = __webpack_require__(2);
 var prismCopy = __webpack_require__(3);
 
 // Templates
-var optionSwitchListTmpl = __webpack_require__(12);
-var selectBoxOptionsTmpl = __webpack_require__(13);
+var optionSwitchListTmpl = __webpack_require__(13);
+var selectBoxOptionsTmpl = __webpack_require__(14);
 
-var metaTmpl = __webpack_require__(8);
-var scriptTmpl = __webpack_require__(9);
-var metaInfoTmpl = __webpack_require__(7);
+var metaTmpl = __webpack_require__(9);
+var helloWorld = __webpack_require__(7);
+var scriptTmpl = __webpack_require__(10);
+var metaInfoTmpl = __webpack_require__(8);
 var cssLibsTmpl = __webpack_require__(5);
 var cssTmpl = __webpack_require__(6);
 
-var vueJsHtml = __webpack_require__(10);
-var vueJsInit = __webpack_require__(11);
+var vueJsHtml = __webpack_require__(11);
+var vueJsInit = __webpack_require__(12);
 
 (function (w) {
   function init() {
@@ -2600,7 +2607,8 @@ var vueJsInit = __webpack_require__(11);
       cssLibs: doT.template(cssLibsTmpl),
       css: doT.template(cssTmpl),
       vueJsHtml: doT.template(vueJsHtml),
-      vueJsInit: doT.template(vueJsInit)
+      vueJsInit: doT.template(vueJsInit),
+      helloWorld: doT.template(helloWorld)
     };
 
     var data = {
@@ -2640,6 +2648,8 @@ var vueJsInit = __webpack_require__(11);
     _.renderTemplate('js-css-libs-template', templates.cssLibs, {
       cssLibs: appData.libraries.css
     });
+
+    _.renderTemplate('js-hello-world-template', templates.helloWorld);
 
     // bootstrap
     _.renderTemplate('js-bootstrap-css-template', templates.css, {

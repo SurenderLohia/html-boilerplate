@@ -38,6 +38,11 @@ body {
   color: #fff;
 }
 
+label,
+a {
+  font-weight: normal;
+}
+
 a {
   color: #fff;
 }
