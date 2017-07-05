@@ -1,6 +1,8 @@
 // Libs
 var doT = require('dot/doT');
 var prismjs = require('prismjs');
+var prismJsx = require('prismjs/components/prism-jsx');
+
 var prismToolbar =  require('prismjs/plugins/toolbar/prism-toolbar');
 var clipboard = require('clipboard');
 var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
@@ -23,6 +25,9 @@ var cssTmpl = require('html-loader!./templates/codes/css.html');
 
 var vueJsHtml = require('html-loader!./templates/codes/vue-js-html.html');
 var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
+
+var reactHtml = require('html-loader!./templates/codes/react-html.html');
+var reactInit = require('html-loader!./templates/codes/react-init.html');
 
 (function (w) {
   function init() {
@@ -88,9 +93,11 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
       selectBoxOptions: doT.template(selectBoxOptionsTmpl),
       cssLibs: doT.template(cssLibsTmpl),
       css: doT.template(cssTmpl),
+      helloWorld: doT.template(helloWorld),
       vueJsHtml: doT.template(vueJsHtml),
       vueJsInit: doT.template(vueJsInit),
-      helloWorld: doT.template(helloWorld)
+      reactHtml: doT.template(reactHtml),
+      reactInit: doT.template(reactInit),
     };
 
     var data = {
@@ -172,6 +179,9 @@ var vueJsInit = require('html-loader!./templates/codes/vue-js-init.html');
     _.renderTemplate('js-react-dom-template', templates.script, {
       path: appData.jsFrameworks.react.dom
     });
+
+    _.renderTemplate('js-react-html-template', templates.reactHtml);
+    _.renderTemplate('js-react-init-template', templates.reactInit);
   }
 
   // Code init
