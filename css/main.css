@@ -41,7 +41,7 @@ select {
 }
 
 .horz-spacing,
-.boilerplate-code {
+.main-container {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -50,7 +50,7 @@ select {
   padding-top: 20px;
 }
 
-.boilerplate-code {
+.main-container {
   max-width: 960px;
 }
 
@@ -65,6 +65,10 @@ select {
 .sub-title {
   font-size: 20px;
   font-weight: normal;
+}
+
+.main-container {
+  position: relative;
 }
 
 .sidebar-wrap {
@@ -135,6 +139,12 @@ select {
 .love {
   font-size: 24px;
   font-size: 1.5rem;
+}
+
+.footer.is-fixed {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* large screen */

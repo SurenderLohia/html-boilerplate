@@ -34,6 +34,7 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
     dotInit();
     bindEvents();
     prismCopy.init();
+    setFooterPos();
   }
 
   function onOptionSwitchChange(e) {
@@ -83,6 +84,30 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
       _.attachEvent(element, 'change', onSidebarSelectBoxChange);
     });
   }
+
+  function setFooterPos() {
+    console.log('resize');
+    var $body = _.getElById('js-body');
+    var hasScrollbar = window.innerWidth > $body.clientWidth;
+    var $footer = _.getElById('js-footer');
+    if(hasScrollbar) {
+      _.removeClass($footer, 'is-fixed');
+    } else {
+      _.addClass($footer, 'is-fixed');
+    }
+  }
+
+  function throttle(fn, wait) {
+    var time = Date.now();
+    return function() {
+      if ((time + wait - Date.now()) < 0) {
+        fn();
+        time = Date.now();
+      }
+    }
+  }
+
+  _.attachEvent(window, 'resize', throttle(setFooterPos, 1000));
 
   function dotInit() {
     var templates = {

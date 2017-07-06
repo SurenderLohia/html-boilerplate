@@ -441,6 +441,22 @@ function attachEvent(el, event, fun) {
   el.addEventListener(event, fun);
 }
 
+function addClass(el, className) {
+  if (el.classList) {
+      el.classList.add(className);
+    } else {
+    el.className += ' ' + className;
+  }
+}
+
+function removeClass(el, className) {
+  if (el.classList) {
+    el.classList.remove(className);
+  } else {
+    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+  }
+}
+
 // dotT.js render Helper
 function renderTemplate(templatePlaceholderId, templateFn, data) {
   var templatePlaceHolder = getElById(templatePlaceholderId);
@@ -455,7 +471,9 @@ helper = {
   forEach: forEach,
   renderTemplate: renderTemplate,
   getElById: getElById,
-  attachEvent: attachEvent
+  attachEvent: attachEvent,
+  addClass: addClass,
+  removeClass: removeClass
 }
 
 module.exports = helper;
@@ -2597,6 +2615,7 @@ var reactInit = __webpack_require__(11);
     dotInit();
     bindEvents();
     prismCopy.init();
+    setFooterPos();
   }
 
   function onOptionSwitchChange(e) {
@@ -2646,6 +2665,30 @@ var reactInit = __webpack_require__(11);
       _.attachEvent(element, 'change', onSidebarSelectBoxChange);
     });
   }
+
+  function setFooterPos() {
+    console.log('resize');
+    var $body = _.getElById('js-body');
+    var hasScrollbar = window.innerWidth > $body.clientWidth;
+    var $footer = _.getElById('js-footer');
+    if(hasScrollbar) {
+      _.removeClass($footer, 'is-fixed');
+    } else {
+      _.addClass($footer, 'is-fixed');
+    }
+  }
+
+  function throttle(fn, wait) {
+    var time = Date.now();
+    return function() {
+      if ((time + wait - Date.now()) < 0) {
+        fn();
+        time = Date.now();
+      }
+    }
+  }
+
+  _.attachEvent(window, 'resize', throttle(setFooterPos, 1000));
 
   function dotInit() {
     var templates = {
