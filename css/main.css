@@ -146,6 +146,11 @@ select {
   font-size: 1.5rem;
 }
 
+.github-info {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px 10px 10px 10px;
+}
+
 .footer.is-fixed {
   position: absolute;
   bottom: 0;
