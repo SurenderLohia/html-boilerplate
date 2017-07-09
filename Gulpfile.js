@@ -40,4 +40,9 @@ gulp.task('css-license', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('build', gulpSequence(['useref','js-license'], 'css-license'));
+gulp.task('copy-images', function() {
+  return gulp.src('images/**/*')
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build', gulpSequence(['useref','js-license', 'copy-images'], 'css-license'));
