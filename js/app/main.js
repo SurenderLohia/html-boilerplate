@@ -1,8 +1,9 @@
+/* html-boilerplate MIT Licence */
+
 // Libs
 var doT = require('dot/doT');
 var prismjs = require('prismjs');
 var prismJsx = require('prismjs/components/prism-jsx');
-
 var prismToolbar =  require('prismjs/plugins/toolbar/prism-toolbar');
 var clipboard = require('clipboard');
 var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
@@ -34,7 +35,9 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
     dotInit();
     bindEvents();
     prismCopy.init();
-    setFooterPos();
+    setTimeout(function() {
+      setFooterPos();
+    }, 0);
   }
 
   function onOptionSwitchChange(e) {
@@ -86,7 +89,6 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
   }
 
   function setFooterPos() {
-    console.log('resize');
     var $body = _.getElById('js-body');
     var hasScrollbar = window.innerWidth > $body.clientWidth;
     var $footer = _.getElById('js-footer');

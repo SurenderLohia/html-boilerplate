@@ -4,8 +4,9 @@
   "description": "Simple html boilerplate code",
   "main": "js/app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "export NODE_ENV='dev' && webpack --progress",
+    "build-prod": "export NODE_ENV='prod' && webpack --progress && gulp build",
+    "watch": "export NODE_ENV='dev' && webpack --progress --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,17 @@
   },
   "homepage": "https://github.com/SurenderLohia/html-boilerplate#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-useref": "^3.1.2",
     "html-loader": "^0.4.5",
+    "license-webpack-plugin": "^0.5.1",
+    "uglify-save-license": "^0.4.1",
+    "useref": "^1.2.0",
     "webpack": "^2.2.1"
   },
   "dependencies": {
