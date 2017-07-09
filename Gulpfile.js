@@ -8,8 +8,15 @@ var cssnano = require('cssnano');
 
 var insert = require('gulp-insert');
 
-var APP_LICENSE = "\n/* Html Boilerplate \n   License: MIT \n   Author: Surender Lohia */\n\n";
-var PRISM_LICENSE = "/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */\n/**\n* prism.js default theme for JavaScript, CSS and HTML\n* Based on dabblet (http://dabblet.com)\n* @author Lea Verou\n*/";
+var gulpSequence = require('gulp-sequence');
+
+var fs = require('fs');
+var package = JSON.parse(fs.readFileSync('./package.json'));
+
+var APP_LICENSE = "/* Html Boilerplate \n   License: MIT \n   Author: Surender Lohia */\n\n";
+var PRISM_LICENSE = "/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */\n/**\n* prism.js default theme for JavaScript, CSS and HTML\n* Based on dabblet (http://dabblet.com)\n* @author Lea Verou*/\n\n";
+var OUTDATED_BROWSER = "/*!--------------------------------------------------------------------\nSTYLES 'Outdated Browser'\nVersion:    1.1.2 - 2015\nauthor:     Burocratik\nwebsite:    http://www.burocratik.com\n* @preserve\n-----------------------------------------------------------------------*/\n\n"
+var JS_LICENSE_PATH = '/* 3rd party licenses here: ' + (package.homepage + '/js/3rdpartylicenses.txt */\n\n');
 
 gulp.task('useref', function () {
   var preprocessors = [
@@ -24,15 +31,17 @@ gulp.task('useref', function () {
 
 gulp.task('js-license', function() {
   return gulp.src('dist/js/bundle.js')
+    .pipe(insert.prepend(JS_LICENSE_PATH))
     .pipe(insert.prepend(APP_LICENSE))
     .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('css-license', function() {
   return gulp.src('dist/css/main.css')
+    .pipe(insert.prepend(OUTDATED_BROWSER))
     .pipe(insert.prepend(PRISM_LICENSE))
     .pipe(insert.prepend(APP_LICENSE))
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('build', ['useref', 'js-license', 'css-license']);
+gulp.task('build', gulpSequence(['useref','js-license'], 'css-license'));

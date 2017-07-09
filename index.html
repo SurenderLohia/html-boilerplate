@@ -13,6 +13,14 @@
     <!-- endbuild -->
   </head>
   <body id="js-body" class="main-gradient">
+    <!--[if lt IE 9]>
+      <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+        <p class="last"><button onclick="closeOutdatedBrowser()" id="btnCloseUpdateBrowser" title="Close">&times;</button></p>
+      </div>
+    <![endif]-->
+
     <div class="option-switch-list">
         
         <div class="main-title-spacing">
@@ -104,6 +112,14 @@
     </div>
     </div>
     
+    <!--[if lt IE 9]>
+      <script>
+      closeOutdatedBrowser = function() {
+        var outdated = document.getElementById('outdated');
+        outdated.style.display = 'none';
+      }
+    </script>
+    <![endif]-->
     <!-- js -->
     <script src="js/bundle.js"></script>
   </body>
