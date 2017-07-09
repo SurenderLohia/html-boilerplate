@@ -7,16 +7,12 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 
 var insert = require('gulp-insert');
-
 var gulpSequence = require('gulp-sequence');
-
-var fs = require('fs');
-var package = JSON.parse(fs.readFileSync('./package.json'));
 
 var APP_LICENSE = "/* Html Boilerplate \n   License: MIT \n   Author: Surender Lohia */\n\n";
 var PRISM_LICENSE = "/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */\n/**\n* prism.js default theme for JavaScript, CSS and HTML\n* Based on dabblet (http://dabblet.com)\n* @author Lea Verou*/\n\n";
 var OUTDATED_BROWSER = "/*!--------------------------------------------------------------------\nSTYLES 'Outdated Browser'\nVersion:    1.1.2 - 2015\nauthor:     Burocratik\nwebsite:    http://www.burocratik.com\n* @preserve\n-----------------------------------------------------------------------*/\n\n"
-var JS_LICENSE_PATH = '/* 3rd party licenses here: ' + (package.homepage + '/js/3rdpartylicenses.txt */\n\n');
+var JS_LICENSE_PATH = '/* 3rd party licenses here: ' + ('https://raw.githubusercontent.com/SurenderLohia/html-boilerplate/master' + '/js/3rdpartylicenses.txt */\n\n');
 
 gulp.task('useref', function () {
   var preprocessors = [
