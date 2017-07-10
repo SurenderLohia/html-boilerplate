@@ -45,4 +45,9 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('build', gulpSequence(['useref','js-license', 'copy-images'], 'css-license'));
+gulp.task('copy-readme', function() {
+  return gulp.src('README.md')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', gulpSequence(['useref','js-license', 'copy-images', 'copy-readme'], 'css-license'));
