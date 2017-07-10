@@ -151,12 +151,6 @@ select {
   padding: 15px 10px 10px 10px;
 }
 
-.footer.is-fixed {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 /* large screen */
 @media screen and (min-width: 1025px) {
   html,
@@ -180,6 +174,12 @@ select {
   .boilerplate-code {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .footer.is-fixed {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 
