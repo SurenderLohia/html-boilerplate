@@ -54,11 +54,16 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
     }
 
     curCode.style.display = curTemplteStyle;
+    setFooterPos();
   }
 
   function onSidebarSelectBoxChange(e) {
     var curOption = (e.target);
     var curValue = curOption.value;
+
+    if(curValue === 'Select JS Framework') {
+      curValue = 'hello-world';
+    }
 
     var curCategoryClass = curOption.getAttribute('data-selectbox-category');
     var curTemplateCategoryItems = document.getElementsByClassName(curCategoryClass);
@@ -73,6 +78,8 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
     _.forEach(curTemplateItems, function (item) {
       item.style.display='block';
     });
+
+    setFooterPos();
   }
 
   function bindEvents() {
@@ -89,10 +96,14 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
   }
 
   function setFooterPos() {
-    var $body = _.getElById('js-body');
-    var hasScrollbar = window.innerWidth > $body.clientWidth;
+    var $mainContainer = _.getElById('js-main-container');
     var $footer = _.getElById('js-footer');
-    if(hasScrollbar) {
+
+    _.removeClass($footer, 'is-fixed');
+
+    var hasVerticalScrollbar = $mainContainer.scrollHeight > $mainContainer.clientHeight;
+    
+    if(hasVerticalScrollbar) {
       _.removeClass($footer, 'is-fixed');
     } else {
       _.addClass($footer, 'is-fixed');
@@ -109,7 +120,7 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
     }
   }
 
-  _.attachEvent(window, 'resize', throttle(setFooterPos, 1000));
+  _.attachEvent(window, 'resize', throttle(setFooterPos, 500));
 
   function dotInit() {
     var templates = {
