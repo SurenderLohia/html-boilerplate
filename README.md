@@ -75,7 +75,7 @@ Note: for push changes under your forked repo, then change the remote origin pat
 
 ## Author
 
-* **Surender Lohia** - *Initial work* - [SurenderLohia](https://github.com/SurenderLohia)
+* **Surender Lohia** - [SurenderLohia](https://github.com/SurenderLohia)
 
 ## License
 
@@ -93,3 +93,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://suren
 * [gulp](http://gulpjs.com/)
 * [You might not need jquery](http://youmightnotneedjquery.com/)
 * [MIT License](https://mit-license.org/)
+* [dom-to-image](https://github.com/tsayen/dom-to-image)

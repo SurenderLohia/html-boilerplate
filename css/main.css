@@ -39,6 +39,11 @@ select {
   font-size: 1rem;
 }
 
+.code-font,
+.title {
+  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+}
+
 .main-gradient {
   background: #4568DC;  /* fallback for old browsers */
   background: linear-gradient(to top, #B06AB3, #4568DC);
