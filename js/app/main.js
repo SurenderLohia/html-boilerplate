@@ -7,11 +7,12 @@ var prismJsx = require('prismjs/components/prism-jsx');
 var prismToolbar =  require('prismjs/plugins/toolbar/prism-toolbar');
 var clipboard = require('clipboard');
 var prismNormalizeWhitespace =  require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
+//var prismCopyToClipboard =  require('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard');
+
 
 // App
 var appData = require('./appData');
 var _ = require('./helper');
-var prismCopy = require('./prism-copy');
 
 // Templates
 var optionSwitchListTmpl = require('html-loader!./templates/option-switch-list.html');
@@ -34,7 +35,6 @@ var reactInit = require('html-loader!./templates/codes/react-init.html');
   function init() {
     dotInit();
     bindEvents();
-    prismCopy.init();
     setTimeout(function() {
       setFooterPos();
     }, 0);
